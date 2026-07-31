@@ -1,0 +1,43 @@
+# Project Synopsis
+
+## Title
+
+**Meraki Chronicles – Official Club Website**
+
+## Introduction
+
+Meraki Chronicles is a literary and creative expression club that aims to provide students with a platform to explore writing, storytelling, poetry, public speaking, and artistic communication. As the club continues to grow, there is a need for a centralized digital platform that can effectively showcase its activities, achievements, events, and creative contributions.
+
+The Meraki Chronicles Website is a frontend web application designed to establish the club's online presence and serve as a hub for students interested in literature and creative expression. The website offers an engaging and user-friendly interface through which users can learn about the club, participate in events, explore creative works, and connect with fellow enthusiasts.
+
+## Problem Statement
+
+Currently, information related to club activities, events, and student contributions is scattered across various communication channels. This makes it difficult for students to stay updated and discover opportunities to participate. There is a need for a dedicated platform that consolidates all club-related information in an organized and accessible manner.
+
+## Objectives
+
+* To create a professional online presence for Meraki Chronicles.
+* To provide detailed information about the club's vision, mission, and activities.
+* To showcase events, workshops, competitions, and achievements.
+* To encourage student participation in literary and creative activities.
+* To present student-created content such as poems, stories, articles, and spoken-word performances.
+* To develop a responsive and visually appealing website using frontend technologies.
+
+## Scope of the Project
+
+The website focuses on delivering a seamless user experience through an attractive and responsive interface. It includes pages such as Home, About Us, Events, Creative Corner, Team, and Contact Us. The platform is designed to be accessible across different devices and serves as a foundation for future enhancements such as event registration, content submissions, and member management.
+
+## Technologies Used
+
+* HTML5
+* CSS3
+* JavaScript
+* Git & GitHub
+
+## Expected Outcome
+
+The project will result in a fully functional frontend website that effectively represents Meraki Chronicles and enhances student engagement. The website will act as a centralized platform for communication, creativity, and community building while demonstrating the practical application of modern frontend development concepts.
+
+## Conclusion
+
+The Meraki Chronicles Website combines technology with creativity to create a digital space where students can express themselves, discover opportunities, and contribute to a vibrant literary community. The project not only fulfills academic requirements but also provides a meaningful solution that can benefit the club and its members in the long term.
