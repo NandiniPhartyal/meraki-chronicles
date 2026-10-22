@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <h1>BMI Calculator</h1>
+    <p>Enter your height and weight to calculate your BMI.</p>
+    <form id="bmi-form">
+      <label for="height">Height (cm)</label>
+      <input id="height" type="number" min="1" step="any" placeholder="e.g. 170" required>
+      <label for="weight">Weight (kg)</label>
+      <input id="weight" type="number" min="1" step="any" placeholder="e.g. 65" required>
+      <button type="submit">Calculate BMI</button>
+    </form>
+    <p id="result" role="status" aria-live="polite"></p>
+    <p class="note">BMI categories are general screening ranges, not a medical diagnosis.</p>
+  </main>
+</body>
+</html>
