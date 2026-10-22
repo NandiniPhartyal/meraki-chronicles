@@ -1,0 +1,39 @@
+1. What is the difference between frontend and backend JavaScript?
+
+Frontend JavaScript runs in the user's browser and is used to make web pages interactive. It can manipulate HTML elements, handle user events, validate forms, and update content dynamically. Backend JavaScript runs on a server, commonly using Node.js, and handles server-side logic, database operations, authentication, and API requests.
+
+2. What is DOM?
+
+DOM stands for Document Object Model. It represents an HTML document as a tree of objects that JavaScript can access and modify. Using the DOM, JavaScript can change HTML content, styles, attributes, and elements dynamically.
+
+3. What is an event in JavaScript?
+
+An event is an action or occurrence that JavaScript can respond to. Events can be triggered by users, browsers, or scripts. Common examples include clicking a button, pressing a keyboard key, submitting a form, and loading a webpage. The addEventListener() method is used to execute a function when a specified event occurs.
+
+4. What is the event loop in JavaScript?
+
+The event loop is a mechanism that allows JavaScript to handle asynchronous operations. JavaScript executes synchronous code using the call stack. When asynchronous operations are completed, their callbacks are scheduled for execution. The event loop coordinates when these callbacks run after the call stack becomes empty. Promise callbacks are processed before timer callbacks when both are waiting to execute.
+
+5. What is hoisting in JavaScript?
+
+Hoisting refers to how JavaScript processes variable and function declarations before executing code in their scope. Variables declared with var are initialized with undefined, while let and const cannot be accessed before initialization. Function declarations can generally be called before their position in the code.
+
+6. What is event bubbling?
+
+Event bubbling is the process in which an event triggered on an element propagates upward through its parent elements in the DOM. For example, clicking a button inside a div can trigger the button's event handler first, followed by the event handler of its parent div. The stopPropagation() method can be used to stop further event propagation.
+
+7. What is the difference between named function, anonymous function, and arrow function?
+
+A named function is a function with an explicit name that can be used to call it. An anonymous function is a function without an explicit name, often assigned to a variable or passed as an argument. An arrow function uses the => syntax and provides a shorter way to write functions. Arrow functions inherit the this value from their surrounding scope and cannot be used as constructors.
+
+8. Explain for-of and for-in loops.
+
+The for-of loop iterates over the values of an iterable, such as an array or string. The for-in loop iterates over the enumerable string keys of an object. For example, for-of can be used to access each element of an array, while for-in can be used to access the property names of an object.
+
+9. Explain any five array methods.
+
+The push() method adds one or more elements to the end of an array and returns its new length. The pop() method removes and returns the last element of an array. The map() method creates a new array by applying a function to every element. The filter() method creates a new array containing elements that satisfy a specified condition. The reduce() method processes array elements and combines them into a single result, such as the sum of all numbers in an array.
+
+10. What is a callback function in JavaScript?
+
+A callback function is a function passed as an argument to another function so that it can be called when needed. Callbacks can be synchronous or asynchronous. They are commonly used in event handling, array methods, and asynchronous operations such as timers. For example, a function passed to setTimeout() is a callback that executes after the specified delay.
