@@ -1,0 +1,13 @@
+* { box-sizing: border-box; }
+:root { font-family: Arial, sans-serif; }
+body {
+  --background: #f8fafc; --foreground: #172033; --card: #ffffff; --accent: #4f46e5;
+  margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px;
+  background: var(--background); color: var(--foreground); transition: background .2s, color .2s;
+}
+body[data-theme="dark"] { --background: #111827; --foreground: #f9fafb; --card: #1f2937; --accent: #818cf8; }
+body[data-theme="ocean"] { --background: #cffafe; --foreground: #164e63; --card: #ecfeff; --accent: #0891b2; }
+body[data-theme="sunset"] { --background: #ffedd5; --foreground: #7c2d12; --card: #fff7ed; --accent: #ea580c; }
+.card { width: min(100%, 440px); padding: 30px; border-radius: 16px; background: var(--card); box-shadow: 0 10px 30px #00000014; }
+select, button { width: 100%; margin-top: 12px; padding: 12px; border: 1px solid #94a3b8; border-radius: 8px; font-size: 1rem; }
+button { background: var(--accent); color: white; border: 0; cursor: pointer; }
