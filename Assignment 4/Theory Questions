@@ -1,0 +1,367 @@
+JAVASCRIPT AND REACT – ASSIGNMENT ANSWERS
+
+1.  WHAT IS A CLOSURE IN JAVASCRIPT? EXPLAIN WITH A SUITABLE EXAMPLE.
+
+A closure in JavaScript is a function that remembers and has access to
+variables from its outer (enclosing) function, even after the outer
+function has finished executing.
+
+Closures are useful for data privacy, maintaining state, and creating
+function factories.
+
+Example:
+
+function outerFunction() { let count = 0;
+
+    function innerFunction() {
+        count++;
+        console.log(count);
+    }
+
+    return innerFunction;
+
+}
+
+const counter = outerFunction();
+
+counter(); // 1 counter(); // 2 counter(); // 3
+
+Explanation: - outerFunction() declares a variable named count. -
+innerFunction() accesses and modifies the variable count. - Even after
+outerFunction() finishes execution, the inner function remembers the
+variable. - This behavior is called a closure.
+
+2.  WHAT IS A PROMISE IN JAVASCRIPT? EXPLAIN ITS DIFFERENT STATES.
+
+A Promise is an object in JavaScript that represents the eventual
+completion or failure of an asynchronous operation.
+
+It helps handle operations such as API requests, file loading, and
+database communication.
+
+A Promise has three states:
+
+1.  Pending: The initial state. The operation has not yet completed.
+2.  Fulfilled: The operation has completed successfully and returned a
+    result.
+3.  Rejected: The operation has failed and returned an error.
+
+Example:
+
+const myPromise = new Promise((resolve, reject) => { let success = true;
+
+    if (success) {
+        resolve("Operation successful!");
+    } else {
+        reject("Operation failed!");
+    }
+
+});
+
+myPromise .then(result => console.log(result)) .catch(error =>
+console.log(error));
+
+Explanation: - resolve() marks the Promise as fulfilled. - reject()
+marks the Promise as rejected. - .then() handles successful results. -
+.catch() handles errors.
+
+Once a Promise is fulfilled or rejected, its state cannot change again.
+
+3.  WHAT IS ASYNC/AWAIT IN JAVASCRIPT? HOW DOES IT SIMPLIFY WORKING WITH
+    PROMISES?
+
+Async/await is a modern JavaScript feature used to handle asynchronous
+operations in a simpler and more readable way.
+
+It is built on top of Promises and makes asynchronous code look similar
+to synchronous code.
+
+-   async is used before a function declaration to make it return a
+    Promise.
+-   await pauses the execution of the surrounding async function until
+    the Promise settles.
+
+Example:
+
+function getData() { return new Promise(resolve => { setTimeout(() => {
+resolve(“Data received successfully!”); }, 2000); }); }
+
+async function displayData() { try { const result = await getData();
+console.log(result); } catch (error) { console.log(error); } }
+
+displayData();
+
+How async/await simplifies Promises: - Makes code easier to read and
+understand. - Avoids deeply nested .then() callbacks. - Allows error
+handling using try…catch. - Makes sequential asynchronous operations
+easier to manage.
+
+4.  WHAT IS THE GLOBAL EXECUTION CONTEXT IN JAVASCRIPT?
+
+The Global Execution Context (GEC) is the default environment created by
+JavaScript when a program starts executing.
+
+It is responsible for managing global variables, functions, and the
+execution of code outside functions.
+
+The Global Execution Context has two main phases:
+
+1.  Creation Phase:
+    -   Memory is allocated for variables and functions.
+    -   Function declarations are stored completely.
+    -   Variables declared with var are initialized with undefined.
+    -   let and const are created but remain uninitialized until their
+        declarations are evaluated.
+2.  Execution Phase:
+    -   JavaScript executes the code line by line.
+    -   Variables receive their assigned values.
+    -   Functions are executed when called.
+
+Example:
+
+var name = “Nandini”;
+
+function greet() { console.log(“Hello” + name); }
+
+greet();
+
+Explanation: - The Global Execution Context is created when the script
+starts. - Memory is allocated for name and greet. - The variable
+receives the value “Nandini”. - The function is called and prints “Hello
+Nandini”.
+
+The Global Execution Context also has a global object and a this
+binding. In a browser’s classic script, the global object is window.
+
+5.  WHAT IS CURRYING IN JAVASCRIPT? EXPLAIN WITH AN EXAMPLE.
+
+Currying is a technique in JavaScript in which a function that takes
+multiple arguments is converted into a sequence of functions, where each
+function takes one argument at a time.
+
+It is useful for code reusability, function composition, and creating
+specialized functions.
+
+Example:
+
+// Normal function function add(a, b, c) { return a + b + c; }
+
+// Curried function function curriedAdd(a) { return function(b) { return
+function(c) { return a + b + c; }; }; }
+
+console.log(add(2, 3, 4)); // 9
+
+console.log(curriedAdd(2)(3)(4)); // 9
+
+Explanation: - The first function accepts a. - It returns another
+function that accepts b. - The second function returns a third function
+that accepts c. - The final function calculates and returns the sum.
+
+Thus, currying allows arguments to be passed one at a time.
+
+6.  WHAT IS JQUERY, AND WHAT IS ITS SIGNIFICANCE IN WEB DEVELOPMENT?
+
+jQuery is a fast, lightweight, and feature-rich JavaScript library
+designed to simplify HTML document manipulation, event handling,
+animations, and AJAX operations.
+
+It provides an easy-to-use syntax that reduces the amount of JavaScript
+code developers need to write.
+
+Example:
+
+<!DOCTYPE html>
+jQuery Example
+    <p id="message">Hello World!</p>
+    <button id="btn">Click Me</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#btn").click(function() {
+                $("#message").hide();
+            });
+        });
+    </script>
+
+Significance of jQuery: 1. Simplifies HTML DOM manipulation. 2. Makes
+event handling easier. 3. Provides built-in animation effects. 4.
+Simplifies AJAX requests. 5. Offers cross-browser compatibility. 6.
+Reduces the amount of code required for common tasks.
+
+Although modern JavaScript provides many features that were previously
+handled by jQuery, it is still used in several existing websites and
+projects.
+
+7.  WHAT IS A COMPONENT IN REACT? EXPLAIN ITS TYPES.
+
+A component in React is a reusable and independent piece of the user
+interface (UI). It helps divide a webpage into smaller, manageable
+parts.
+
+For example, a website can have separate components for a navbar,
+header, footer, product card, and login form.
+
+React components are mainly of two types:
+
+1.  Functional Components
+
+Functional components are JavaScript functions that return JSX to
+describe the user interface.
+
+They can use React Hooks such as useState and useEffect to manage state
+and side effects.
+
+Example:
+
+function Welcome() { return
+Welcome to React!
+; }
+
+export default Welcome;
+
+2.  Class Components
+
+Class components are ES6 JavaScript classes that extend React.Component.
+They use a render() method to return JSX.
+
+They can manage state and lifecycle methods.
+
+Example:
+
+import React from “react”;
+
+class Welcome extends React.Component { render() { return
+Welcome to React!
+; } }
+
+export default Welcome;
+
+Difference between the two:
+
+Functional Components: - Written as JavaScript functions. - Use Hooks
+for state and effects. - Generally simpler and shorter. - Preferred in
+modern React development.
+
+Class Components: - Written as JavaScript classes. - Use state and
+lifecycle methods. - Generally more verbose. - Common in older React
+code.
+
+8.  WHAT IS THE VIRTUAL DOM? HOW DOES IT IMPROVE APPLICATION
+    PERFORMANCE?
+
+The Virtual DOM (Document Object Model) is a lightweight, in-memory
+representation of the actual DOM maintained by React.
+
+Whenever the state or props of a component change, React creates an
+updated representation and compares it with the previous one.
+
+This comparison process is called reconciliation.
+
+React then commits the necessary changes to the actual DOM.
+
+How it works: 1. React creates a Virtual DOM representation of the UI.
+2. When data changes, React renders an updated Virtual DOM. 3. React
+compares the new representation with the previous one. 4. It determines
+which parts of the UI need updating. 5. React commits the required
+changes to the real DOM.
+
+How it improves performance: - Avoids unnecessary DOM updates. -
+Minimizes changes to the actual DOM. - Makes UI updates more
+efficient. - Helps manage complex and dynamic interfaces. - Provides a
+declarative approach to UI development.
+
+Example:
+
+Suppose a webpage displays a counter with a button. When the counter
+changes from 1 to 2, React updates the relevant text instead of
+requiring the developer to manually rebuild the entire webpage.
+
+9.  WHAT IS JSX? WHY CAN BROWSERS NOT UNDERSTAND IT DIRECTLY?
+
+JSX (JavaScript XML) is a syntax extension for JavaScript used in React.
+It allows developers to write HTML-like code inside JavaScript, making
+UI development easier and more readable.
+
+JSX is not standard JavaScript syntax, so browsers cannot understand it
+directly.
+
+It must first be transformed into regular JavaScript using tools such as
+Babel or an appropriate build tool.
+
+Example of JSX:
+
+const element = (
+        <h1>Hello World!</h1>
+        <p>Welcome to React.</p>
+    </div>
+
+);
+
+Equivalent JavaScript using React.createElement:
+
+const element = React.createElement( “div”, null,
+React.createElement(“h1”, null, “Hello World!”),
+React.createElement(“p”, null, “Welcome to React.”) );
+
+Why browsers cannot understand JSX directly: 1. JSX contains HTML-like
+syntax that is not part of standard JavaScript. 2. Browsers execute
+JavaScript, not JSX syntax. 3. JSX must be transpiled into regular
+JavaScript. 4. After transformation, the browser can execute the
+generated JavaScript.
+
+Advantages of JSX: - Makes code easier to read and write. - Allows
+HTML-like syntax inside JavaScript. - Makes UI structures easier to
+understand. - Supports embedding JavaScript expressions using curly
+braces {}.
+
+10. WHAT ARE PROPS IN REACT? ARE THEY MUTABLE OR IMMUTABLE?
+
+Props (Properties) are read-only inputs passed from a parent component
+to a child component in React.
+
+They allow components to receive data and display dynamic content. Props
+help make components reusable.
+
+Example:
+
+function Student(props) { return (
+Student Name: {props.name}
+    );
+
+}
+
+function App() { return (
+            <Student name="Nandini" />
+            <Student name="Rahul" />
+        </div>
+    );
+
+}
+
+export default App;
+
+Output:
+
+Student Name: Nandini Student Name: Rahul
+
+Are props mutable or immutable?
+
+Props are immutable (read-only) from the perspective of the receiving
+component.
+
+-   A child component should not directly modify its props.
+-   Props are passed from the parent component to the child component.
+-   If the parent updates the data, React can render the child again
+    with the updated props.
+-   A child that needs to manage changing data should use state instead.
+
+Example of incorrect usage:
+
+function Student(props) { props.name = “Rahul”; // Incorrect return
+{props.name}
+; }
+
+This is incorrect because React components should not modify their
+props.
+
+END OF ASSIGNMENT
